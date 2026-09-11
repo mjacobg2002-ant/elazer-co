@@ -4,6 +4,11 @@ A single-file, high-end homepage **concept/shell** for **Elazer Co**, a roofing,
 gutter contractor that also offers skylight cleaning. Built as a static site — no build step, no
 dependencies. Open `index.html` in any browser.
 
+**Style:** modeled on the A&M Roofing look — **Oswald** uppercase display + Inter body, warm-white
+base with a charcoal + Elazer-green accent, dark top bar, split hero with photo, icon trust bar,
+service/card grids, a green accent CTA band, a draggable before/after slider, and a fixed mobile
+action bar.
+
 > This is a homepage shell, not the full production website. It is designed to look like the site
 > of a serious professional exterior contractor and to make it easy to request an estimate.
 
@@ -55,7 +60,8 @@ grep -n "data-placeholder" index.html
 
 ## Customizing
 
-- **Colors** — edit the CSS custom properties in `:root` (charcoal base + a single green accent `--accent`).
+- **Colors** — edit the CSS custom properties in `:root` (warm-white base + a single green accent `--accent`, with `--accent-lite` for dark surfaces).
+- **Fonts** — Oswald (display) + Inter (body), loaded from Google Fonts in `<head>`.
 - **Copy** — all text is inline in `index.html`.
 - **Phone number** — search/replace `4842357821` and `(484) 235-7821`.
 - **Service area** — fill in the specific city/towns (see the `TODO` comment near the `#area` section).
