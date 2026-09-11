@@ -180,10 +180,17 @@ p{margin:0}
   color:#c9cdd2;margin-top:.25rem}
 .hero-badge .div{width:1px;height:34px;background:var(--line-d)}
 @media (max-width:900px){
-  .hero-grid{grid-template-columns:1fr}
-  .hero-media{min-height:52vw;max-height:440px}
-  .hero-media::after{background:linear-gradient(0deg,var(--ink) 0%,rgba(22,24,27,0) 55%)}
-  .hero-badge{position:static;margin:1.4rem clamp(28px,5vw,72px) 0;display:inline-flex}
+  /* Keep the desktop feel on mobile: photo as full background, copy overlaid */
+  .hero-grid{grid-template-columns:1fr;min-height:min(88vh,680px)}
+  .hero-copy{grid-area:1/1;z-index:2}
+  .hero-media{grid-area:1/1;position:absolute;inset:0;z-index:0}
+  .hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero-media::after{background:linear-gradient(180deg,rgba(20,22,25,.72) 0%,rgba(20,22,25,.6) 45%,rgba(20,22,25,.85) 100%)}
+  .hero-badge{position:absolute;left:clamp(20px,5vw,72px);bottom:clamp(20px,4vw,44px);display:inline-flex}
+}
+@media (max-width:520px){
+  .hero-badge{display:none}
+  .hero-cred span{font-size:.66rem;padding:.45em .7em}
 }
 
 /* ---------- Trust bar ---------- */
@@ -583,8 +590,8 @@ p{margin:0}
         <img data-placeholder src="public/images/elazer-photos/roofing/commercial.jpg" alt="Flat commercial roof" loading="lazy" />
         <div class="type-body"><h3>Commercial</h3><p>Practical systems for flat and low-slope roofs.</p></div>
       </div>
-      <div class="type noimg reveal">
-        <span class="kicker" aria-hidden="true">04</span>
+      <div class="type reveal">
+        <img data-placeholder src="public/images/elazer-photos/repairs/repair.jpg" alt="Roofer making a repair on a shingle roof" loading="lazy" />
         <div class="type-body"><h3>Repairs &amp; Inspection</h3><p>Straightforward inspections and repairs — no guesswork.</p></div>
       </div>
     </div>
