@@ -302,11 +302,12 @@
   .type-meta p { font-size: 0.9rem; color: rgba(255,255,255,0.82); margin: 6px 0 0; }
 
   /* ---------- Before / After ---------- */
-  .ba-wrap { max-width: 960px; margin: 54px auto 0; }
+  .ba-wrap { max-width: 560px; margin: 54px auto 0; }
   .ba {
-    position: relative; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden;
-    box-shadow: var(--shadow); user-select: none; touch-action: none; cursor: ew-resize;
+    position: relative; aspect-ratio: 3/4; border-radius: 8px; overflow: hidden;
+    box-shadow: var(--shadow); user-select: none; touch-action: pan-y; cursor: ew-resize;
   }
+  @media (max-width: 520px) { .ba-wrap { max-width: 100%; } }
   .ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
   .ba .ba-after { clip-path: inset(0 0 0 50%); }
   .ba-label { position: absolute; top: 16px; z-index: 4; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #fff; background: rgba(15,17,21,0.65); padding: 6px 12px; border-radius: 40px; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
@@ -702,11 +703,10 @@
       <h2 class="title">The difference a new roof makes.</h2>
     </div>
     <div class="ba-wrap reveal">
-      <div class="ba" id="ba" aria-label="Before and after roof comparison slider. Drag to compare.">
-        <!-- PLACEHOLDER before/after — these are demonstration images, NOT Elazer Co projects.
-             Replace both with a real matched before/after pair from the company. -->
-        <img class="ba-before" data-placeholder src="public/images/elazer-photos/projects/before.jpg" alt="Aged, damaged roof before replacement (placeholder)" />
-        <img class="ba-after" data-placeholder src="public/images/elazer-photos/projects/after.jpg" alt="Clean new shingle roof after replacement (placeholder)" />
+      <div class="ba" id="ba" aria-label="Before and after roof replacement slider. Drag to compare.">
+        <!-- Real Elazer Co project: worn/streaked shingle roof (before) → new shingle roof (after) -->
+        <img class="ba-before" src="public/images/elazer-photos/projects/before.jpg" alt="Worn, weather-streaked shingle roof with missing shingles before replacement by Elazer Co" width="1320" height="1735" />
+        <img class="ba-after" src="public/images/elazer-photos/projects/after.jpg" alt="Clean new architectural shingle roof after replacement by Elazer Co" width="1320" height="1730" />
         <span class="ba-label b">Before</span>
         <span class="ba-label a">After</span>
         <div class="ba-divider" id="ba-divider"></div>
@@ -714,7 +714,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 7-5 5 5 5"/><path d="m15 7 5 5-5 5"/></svg>
         </div>
       </div>
-      <p class="ba-caption">Placeholder comparison for layout only — replace with a genuine Elazer Co before/after pair.</p>
+      <p class="ba-caption">A real Elazer Co roof replacement — drag the slider to compare before and after.</p>
     </div>
   </div>
 </section>
